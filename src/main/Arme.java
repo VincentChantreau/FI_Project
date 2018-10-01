@@ -13,7 +13,7 @@ public class Arme extends Truc {
 
 	@Override
 	public void pick() {
-		// TODO Auto-generated method stub
+		System.out.println("Vous ramassez l'arme.");
 		
 	}
 

@@ -1,4 +1,4 @@
-package items;
+package main;
 
 public abstract class Truc {
 	// attributs
@@ -11,6 +11,8 @@ public abstract class Truc {
 	protected boolean pickable;
 	protected boolean usable;
 	protected boolean openable;
+	
+	protected boolean visible = true;
 	
 	// constructeur
 	public Truc(String nom, boolean pick, boolean use, boolean open) {
@@ -34,4 +36,10 @@ public abstract class Truc {
 	public String getDesc() {
 		return desc;
 	}
-}
+	public String getNom() {
+		return nom;
+	}
+	public void setDisplay(boolean b) {
+		visible = b;
+	}
+} 

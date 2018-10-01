@@ -2,8 +2,6 @@ package main;
 
 import java.util.ArrayList;
 
-import items.Truc;
-
 public class Hero {
 	// attribut
 	protected String nom;
@@ -23,7 +21,15 @@ public class Hero {
 	}
 	
 	// methodes
-	public void addObjet(Truc o) {
-		inventaire.add(o);
+	public Truc pickUp(Truc o) {
+		if(o.pickable == true) {
+			inventaire.add(o);
+			o.setDisplay(false);
+		}
+		else System.out.println("On ne peut ramasser ceci.\n");
+		return o;
+	}
+	public void addPV(int pv) {
+		this.pv += pv;
 	}
 }

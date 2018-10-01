@@ -1,4 +1,4 @@
-package monsters;
+package main;
 
 public class Monstre {
 

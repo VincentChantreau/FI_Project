@@ -21,16 +21,23 @@ public class Hero {
 	}
 
 	// methodes
-	public Truc pickUp(Truc o) {
-		if (o.pickable == true) {
-			inventaire.add(o);
-			o.setDisplay(false);
-		} else
-			System.out.println("On ne peut ramasser ceci.\n");
-		return o;
-	}
-
 	public void addPV(int pv) {
 		this.pv += pv;
+	}
+	public void add(Truc o) {
+		inventaire.add(o);
+	}
+	public Truc isInInventory(String s) {
+		Truc res = null;
+		for (int i = 0; i < inventaire.size(); i++) {
+			if (inventaire.get(i).getNom().equals(s.toUpperCase()) && inventaire.get(i).isVisible())
+				res = inventaire.get(i);
+		}
+		for (int i = 0; i < equipement.size(); i++) {
+			if (equipement.get(i).getNom().equals(s.toUpperCase()) && equipement.get(i).isVisible())
+				res = equipement.get(i);
+		}
+
+		return res;
 	}
 }

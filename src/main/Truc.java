@@ -29,6 +29,8 @@ public abstract class Truc {
 	public abstract void pick();
 
 	public abstract void use();
+	
+	public abstract void use(Hero h);
 
 	public abstract void open();
 
@@ -42,6 +44,9 @@ public abstract class Truc {
 
 	public String getNom() {
 		return nom;
+	}
+	public boolean usable() {
+		return usable;
 	}
 
 	public void setDisplay(boolean b) {

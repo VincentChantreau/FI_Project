@@ -13,7 +13,8 @@ public class Pomme extends Consommable {
 	@Override
 	public void use(Hero h) {
 		h.addPV(4);
-
+		System.out.print("Vous dévorez une pomme,");
+		System.out.println(" vous récupérez 4 points de vie.");
 	}
 
 	@Override

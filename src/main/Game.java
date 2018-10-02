@@ -3,13 +3,14 @@ package main;
 import java.util.Scanner;
 
 import items.Pomme;
+import tools.Bot;
 
 public class Game {
 
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		Scanner clavier = new Scanner(System.in);
-		Roboto bot = new Roboto();
+		Bot bot = new Bot();
 
 		System.out.println("Salutation aventurier, veuillez renseigner votre nom :");
 		Hero character = new Hero(clavier.nextLine());
@@ -28,11 +29,10 @@ public class Game {
 
 		System.out.println("que faites vous ?\n");
 		String rep = clavier.nextLine();
-
-		String verbe = bot.interprete(rep);
-		Truc objet = bot.toObject(rep, cuisine);
 		
-		bot.doThis(verbe, objet);
+		// System.out.println("Classe de Pomme : " + pommes.getClass().getSuperclass().getName());
+
+		Bot.faire(rep, cuisine, character);
 
 	}
 

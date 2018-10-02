@@ -26,6 +26,9 @@ public class Salle {
 	public void addObjet(Truc o) {
 		contient.add(o);
 	}
+	public void remove(Truc o) {
+		contient.remove(o);
+	}
 
 	public Truc isInRoom(String s) {
 		Truc res = null;

@@ -10,7 +10,7 @@ public class Game {
 		@SuppressWarnings("resource")
 		Scanner clavier = new Scanner(System.in);
 		Roboto bot = new Roboto();
-		
+
 		System.out.println("Salutation aventurier, veuillez renseigner votre nom :");
 		Hero character = new Hero(clavier.nextLine());
 
@@ -24,13 +24,13 @@ public class Game {
 
 		cuisine.addObjet(pommes);
 		cuisine.addObjet(epee);
-		
+
 		System.out.println("Que faites vous ?\n");
 		String rep = clavier.nextLine();
-		
-		String does = bot.interprete(rep);
-		
-		bot.doThis(does, epee);
+
+		rep = bot.interprete(rep);
+		System.out.println(rep);
+		System.out.println("Fin du programme.");
 
 	}
 

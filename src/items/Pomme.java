@@ -13,25 +13,25 @@ public class Pomme extends Consommable {
 	@Override
 	public void use(Hero h) {
 		h.addPV(4);
-		
+
 	}
 
 	@Override
 	public void pick() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void use() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void open() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

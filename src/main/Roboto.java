@@ -17,10 +17,9 @@ public class Roboto {
 	public Truc toObject(String s, Salle e) {
 		Truc res = null;
 		String[] parts = s.split(" ", 2);
-		Truc o = e.isInRoom(parts[1]);
-		if (o == null)
-			res = o;
+		res = e.isInRoom(parts[1]);
 
+		System.out.println(res);
 		return res;
 	}
 
@@ -29,7 +28,6 @@ public class Roboto {
 		s = s.toUpperCase();
 
 		String parts[] = s.split(" ", 2);
-		System.out.println(s);
 
 		// System.out.println("\n_Début pick_");
 		for (int i = 0; i < picks.length; i++) {
@@ -44,6 +42,7 @@ public class Roboto {
 			// else System.out.println("nope");
 		}
 		// TODO last for
+		System.out.println(res);
 		return res;
 	}
 
@@ -51,6 +50,12 @@ public class Roboto {
 		switch (s) {
 		case "pick":
 			o.pick();
+			break;
+		case "use":
+			o.use();
+			break;
+		case "open":
+			o.open();
 			break;
 		}
 	}

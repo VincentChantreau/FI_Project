@@ -13,6 +13,7 @@ public class Arme extends Truc {
 	@Override
 	public void pick() {
 		System.out.println("Vous ramassez l'arme.");
+		setDisplay(false);
 
 	}
 

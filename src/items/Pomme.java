@@ -19,6 +19,8 @@ public class Pomme extends Consommable {
 	@Override
 	public void pick() {
 		// TODO Auto-generated method stub
+		System.out.println("Vous ramassez "+nombre+" pommes.");
+		visible = false;
 
 	}
 

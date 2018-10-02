@@ -27,13 +27,21 @@ public class Salle {
 		contient.add(o);
 	}
 
-	public Truc isInRoom(String o) {
+	public Truc isInRoom(String s) {
 		Truc res = null;
 		for (int i = 0; i < contient.size(); i++) {
-			if (contient.get(i).getNom().equals(o.toUpperCase()))
+			if (contient.get(i).getNom().equals(s.toUpperCase()) && contient.get(i).isVisible())
 				res = contient.get(i);
 		}
 
 		return res;
+	}
+	
+	public void listerObjets() {
+		int i;
+		System.out.print("Liste des objets : ");
+		for(i=0;i<contient.size();i++) {
+			if(contient.get(i).isVisible()) System.out.print(contient.get(i).getNom()+", ");
+		}
 	}
 }

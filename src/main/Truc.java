@@ -47,4 +47,7 @@ public abstract class Truc {
 	public void setDisplay(boolean b) {
 		visible = b;
 	}
+	public boolean isVisible() {
+		return visible;
+	}
 }

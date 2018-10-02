@@ -24,13 +24,15 @@ public class Game {
 
 		cuisine.addObjet(pommes);
 		cuisine.addObjet(epee);
+		cuisine.listerObjets();
 
-		System.out.println("Que faites vous ?\n");
+		System.out.println("que faites vous ?\n");
 		String rep = clavier.nextLine();
 
-		rep = bot.interprete(rep);
-		System.out.println(rep);
-		System.out.println("Fin du programme.");
+		String verbe = bot.interprete(rep);
+		Truc objet = bot.toObject(rep, cuisine);
+		
+		bot.doThis(verbe, objet);
 
 	}
 

@@ -17,7 +17,7 @@ public class Salle {
 	public Salle(String nom) {
 		contient = new ArrayList<Truc>();
 		identite = id;
-		this.nom = nom;
+		this.nom = nom.toLowerCase();
 
 		id++;
 	}
@@ -26,25 +26,31 @@ public class Salle {
 	public void addObjet(Truc o) {
 		contient.add(o);
 	}
+
 	public void remove(Truc o) {
 		contient.remove(o);
+	}
+
+	public String getNom() {
+		return nom;
 	}
 
 	public Truc isInRoom(String s) {
 		Truc res = null;
 		for (int i = 0; i < contient.size(); i++) {
-			if (contient.get(i).getNom().equals(s.toUpperCase()) && contient.get(i).isVisible())
+			if (contient.get(i).getNom().equals(s.toUpperCase()) && contient.get(i).isVisible(nom))
 				res = contient.get(i);
 		}
 
 		return res;
 	}
-	
+
 	public void listerObjets() {
 		int i;
-		System.out.print("Liste des objets : ");
-		for(i=0;i<contient.size();i++) {
-			if(contient.get(i).isVisible()) System.out.print(contient.get(i).getNom()+", ");
+		System.out.print("Liste des objets de la pièce : \n");
+		for (i = 0; i < contient.size(); i++) {
+			if (contient.get(i).isVisible(nom))
+				System.out.print(contient.get(i).getNom() + ", ");
 		}
 	}
 }

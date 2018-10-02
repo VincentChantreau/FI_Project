@@ -15,16 +15,17 @@ public class Game {
 		Hero character = new Hero(clavier.nextLine());
 
 		Salle cuisine = new Salle("cuisine");
-		Arme epee = new Arme("épée courte", true, true, false, 2);
-		Consommable pommes = new Pomme("pomme", true, true, false, 2);
+		Arme epee = new Arme("épée courte", true, true, false, cuisine.getNom(), 2);
+		Consommable pommes = new Pomme("pomme", true, true, false, cuisine.getNom(), 2);
+
+		cuisine.addObjet(pommes);
+		cuisine.addObjet(epee);
+
+		System.out.println("Vous êtes dans une cuisine, il y a des pommes sur la table.");
+		System.out.println("Il y a également une " + epee.getNom() + " ici.");
 
 		// début
 		while (true) {
-			System.out.println("Vous êtes dans une cuisine, il y a des pommes sur la table.");
-			System.out.println("Il y a également une " + epee.getNom() + " ici.");
-
-			cuisine.addObjet(pommes);
-			cuisine.addObjet(epee);
 			cuisine.listerObjets();
 
 			System.out.println("que faites vous ?\n");

@@ -5,8 +5,8 @@ import main.Hero;
 
 public class Pomme extends Consommable {
 
-	public Pomme(String nom, boolean pick, boolean use, boolean open, int nombre) {
-		super(nom, pick, use, open, nombre);
+	public Pomme(String nom, boolean pick, boolean use, boolean open, String lieu, int nombre) {
+		super(nom, pick, use, open, lieu, nombre);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -20,8 +20,8 @@ public class Pomme extends Consommable {
 	@Override
 	public void pick() {
 		// TODO Auto-generated method stub
-		System.out.println("Vous ramassez "+nombre+" pommes.");
-		visible = false;
+		System.out.println("Vous ramassez " + nombre + " pommes.");
+		visible = "inventaire";
 
 	}
 

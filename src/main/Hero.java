@@ -24,17 +24,27 @@ public class Hero {
 	public void addPV(int pv) {
 		this.pv += pv;
 	}
+
 	public void add(Truc o) {
 		inventaire.add(o);
 	}
+
+	public void showInventory() {
+		System.out.println("--- INVENTAIRE DE " + nom.toUpperCase() + " ---");
+		for (int i = 0; i < inventaire.size(); i++) {
+			System.out.println(inventaire.get(i).getNom());
+		}
+		System.out.println("--- ------------------------- ---");
+	}
+
 	public Truc isInInventory(String s) {
 		Truc res = null;
 		for (int i = 0; i < inventaire.size(); i++) {
-			if (inventaire.get(i).getNom().equals(s.toUpperCase()) && inventaire.get(i).isVisible())
+			if (inventaire.get(i).getNom().equals(s.toUpperCase()) && inventaire.get(i).isVisible("inventaire"))
 				res = inventaire.get(i);
 		}
 		for (int i = 0; i < equipement.size(); i++) {
-			if (equipement.get(i).getNom().equals(s.toUpperCase()) && equipement.get(i).isVisible())
+			if (equipement.get(i).getNom().equals(s.toUpperCase()) && equipement.get(i).isVisible("equipement"))
 				res = equipement.get(i);
 		}
 

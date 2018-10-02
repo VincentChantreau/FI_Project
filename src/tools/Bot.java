@@ -13,10 +13,11 @@ public class Bot {
 		String[] uses = { "exciper", "user", "manier", "employer", "servir", "appliquer", "utiliser" };
 		String[] opens = { "frayer", "decouvrir", "degager", "entrouvrir", "deplier", "deboucher", "percer",
 				"decapsuler", "percer", "forcer", "fendre" };
-		String[] eats = { "manger", "ingerer", "consommer", "devorer", "avaler", "absorber", "chipoter", "croquer", "grignoter",
-				"ingurgiter", "boulotter", "bouffer", "becqueter", "crouter", "briffer", "dejeuner", "diner", "gouter",
-				"souper", "brouter", "paitre", "paturer", "picorer", "consumer", "bruler", "devorer", "ruiner",
-				"depenser", "dilapider", "engloutir", "ronger", "attaquer", "recouvrir", "dissimuler", "gaspiller" };
+		String[] eats = { "manger", "ingerer", "consommer", "devorer", "avaler", "absorber", "chipoter", "croquer",
+				"grignoter", "ingurgiter", "boulotter", "bouffer", "becqueter", "crouter", "briffer", "dejeuner",
+				"diner", "gouter", "souper", "brouter", "paitre", "paturer", "picorer", "consumer", "bruler", "devorer",
+				"ruiner", "depenser", "dilapider", "engloutir", "ronger", "attaquer", "recouvrir", "dissimuler",
+				"gaspiller" };
 
 		// traitement de la chaine
 		String s = StringOperation.sansAccents(clavier);
@@ -32,7 +33,7 @@ public class Bot {
 			objet = h.isInInventory(parts[1]);
 			if (objet == null)
 				action = "noObj";
-		}
+		} // objet trouvé !
 
 		for (int i = 0; i < picks.length; i++) {
 			if (parts[0].equals(picks[i].toLowerCase()))
@@ -57,9 +58,15 @@ public class Bot {
 			else
 				action = "dumb";
 		}
+
+		if (objet == null) {
+			action = "noobj";
+		} else if (!objet.isVisible())
+			action = "noobj";
+
 		System.out.println("action : " + action);
-		System.out.println("objet : "+ objet);
-		
+		System.out.println("objet : " + objet);
+
 		switch (action.toLowerCase()) {
 		case "pick":
 			objet.pick();
@@ -79,7 +86,7 @@ public class Bot {
 			System.out.print("Vraiment ?");
 			System.out.println(" On ne peut pas manger ceci..");
 			break;
-		case "noObj":
+		case "noobj":
 			System.out.println("Il n'y a rien de la sorte ici.");
 			break;
 		default:

@@ -29,4 +29,10 @@ public class Arme extends Truc {
 
 	}
 
+	@Override
+	public void use(Hero h) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

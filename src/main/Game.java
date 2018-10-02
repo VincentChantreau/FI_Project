@@ -10,7 +10,6 @@ public class Game {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		Scanner clavier = new Scanner(System.in);
-		Bot bot = new Bot();
 
 		System.out.println("Salutation aventurier, veuillez renseigner votre nom :");
 		Hero character = new Hero(clavier.nextLine());
@@ -20,20 +19,23 @@ public class Game {
 		Consommable pommes = new Pomme("pomme", true, true, false, 2);
 
 		// début
-		System.out.println("Vous êtes dans une cuisine, il y a des pommes sur la table.");
-		System.out.println("Il y a également une " + epee.getNom() + " ici.");
+		while (true) {
+			System.out.println("Vous êtes dans une cuisine, il y a des pommes sur la table.");
+			System.out.println("Il y a également une " + epee.getNom() + " ici.");
 
-		cuisine.addObjet(pommes);
-		cuisine.addObjet(epee);
-		cuisine.listerObjets();
+			cuisine.addObjet(pommes);
+			cuisine.addObjet(epee);
+			cuisine.listerObjets();
 
-		System.out.println("que faites vous ?\n");
-		String rep = clavier.nextLine();
-		
-		// System.out.println("Classe de Pomme : " + pommes.getClass().getSuperclass().getName());
+			System.out.println("que faites vous ?\n");
 
-		Bot.faire(rep, cuisine, character);
+			String rep = clavier.nextLine();
+			Bot.faire(rep, cuisine, character);
 
+			// System.out.println("Classe de Pomme : " +
+			// pommes.getClass().getSuperclass().getName());
+
+		}
 	}
 
 }
